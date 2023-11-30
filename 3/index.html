@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3</title>
+  </head>
+  <body class="centered-wrapper">
+    <h1>Header</h1>
+    <h2>Subheader</h2>
+    <p>Paragraph</p>
+
+    <h3>Unordered List</h3>
+    <ul class="centered-content">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol class="centered-content">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+    </ol>
+
+    <p>Some text can be <b>Bold</b> and some text can be <i>Italicised</i>.</p>
+
+    <button onclick="clickCounter()" type="button">Increment Counter!</button>
+    <br />
+    <p id="result"></p>
+
+    <a href="/">Back to Home</a>
+  </body>
+
+  <style>
+    .centered-wrapper {
+      position: relative;
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+    .centered-wrapper:before {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .centered-content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+
+  <script>
+    function clickCounter() {
+      var count = (localStorage.clickcount =
+        Number(localStorage.clickcount) + 1);
+
+      if (isNaN(count) === true) {
+        count = localStorage.clickcount = 1;
+        document.getElementById("result").innerHTML = count;
+      } else {
+        document.getElementById("result").innerHTML = count;
+      }
+    }
+  </script>
+</html>
